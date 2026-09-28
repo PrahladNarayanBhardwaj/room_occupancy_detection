@@ -1,0 +1,569 @@
+{
+  "reproduction": [
+    {
+      "model": "LR baseline",
+      "TN": 1751,
+      "FP": 0,
+      "FN": 184,
+      "TP": 110,
+      "recall": 0.374
+    },
+    {
+      "model": "LR balanced",
+      "TN": 1751,
+      "FP": 0,
+      "FN": 184,
+      "TP": 110,
+      "recall": 0.374
+    },
+    {
+      "model": "LR balanced + time_since_motion",
+      "TN": 1751,
+      "FP": 0,
+      "FN": 184,
+      "TP": 110,
+      "recall": 0.374
+    },
+    {
+      "model": "LR no light (final model)",
+      "TN": 1738,
+      "FP": 13,
+      "FN": 0,
+      "TP": 294,
+      "recall": 1.0
+    },
+    {
+      "model": "RF 100 trees no light",
+      "TN": 1740,
+      "FP": 11,
+      "FN": 0,
+      "TP": 294,
+      "recall": 1.0
+    },
+    {
+      "model": "RF 1000 trees no light",
+      "TN": 1740,
+      "FP": 11,
+      "FN": 0,
+      "TP": 294,
+      "recall": 1.0
+    },
+    {
+      "model": "RF WITH light (not tried originally)",
+      "TN": 1751,
+      "FP": 0,
+      "FN": 184,
+      "TP": 110,
+      "recall": 0.374
+    }
+  ],
+  "occupied_episodes": 5,
+  "co2_slope_trailing25_corr": 1.0,
+  "lodo": [
+    {
+      "model": "Rule: motion in last 5 min",
+      "recall": 0.985,
+      "precision": 0.93,
+      "FP": 141,
+      "FP_rate": 0.017,
+      "F1": 0.957,
+      "PR_AUC": 0.919,
+      "Brier": 0.017,
+      "FP_Dec25": 52,
+      "recall_2017-12-22": 0.985,
+      "recall_2017-12-23": 0.978,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "Rule: motion + (CO2 or sound)",
+      "recall": 0.985,
+      "precision": 0.956,
+      "FP": 87,
+      "FP_rate": 0.011,
+      "F1": 0.97,
+      "PR_AUC": 0.944,
+      "Brier": 0.011,
+      "FP_Dec25": 0,
+      "recall_2017-12-22": 0.985,
+      "recall_2017-12-23": 0.978,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "LR original (unscaled)",
+      "recall": 0.991,
+      "precision": 0.812,
+      "FP": 435,
+      "FP_rate": 0.053,
+      "F1": 0.893,
+      "PR_AUC": 0.97,
+      "Brier": 0.03,
+      "FP_Dec25": 345,
+      "recall_2017-12-22": 0.989,
+      "recall_2017-12-23": 0.99,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "LR original + light",
+      "recall": 0.898,
+      "precision": 0.914,
+      "FP": 160,
+      "FP_rate": 0.019,
+      "F1": 0.906,
+      "PR_AUC": 0.953,
+      "Brier": 0.032,
+      "FP_Dec25": 148,
+      "recall_2017-12-22": 0.989,
+      "recall_2017-12-23": 1.0,
+      "recall_2018-01-10": 0.374
+    },
+    {
+      "model": "LR scaled",
+      "recall": 0.932,
+      "precision": 0.912,
+      "FP": 171,
+      "FP_rate": 0.021,
+      "F1": 0.922,
+      "PR_AUC": 0.952,
+      "Brier": 0.03,
+      "FP_Dec25": 76,
+      "recall_2017-12-22": 0.848,
+      "recall_2017-12-23": 0.994,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "LR scaled, raw PIR (no engineering)",
+      "recall": 0.922,
+      "precision": 0.759,
+      "FP": 557,
+      "FP_rate": 0.068,
+      "F1": 0.833,
+      "PR_AUC": 0.931,
+      "Brier": 0.049,
+      "FP_Dec25": 450,
+      "recall_2017-12-22": 0.874,
+      "recall_2017-12-23": 0.974,
+      "recall_2018-01-10": 0.918
+    },
+    {
+      "model": "LR scaled, extended features",
+      "recall": 0.975,
+      "precision": 0.913,
+      "FP": 177,
+      "FP_rate": 0.022,
+      "F1": 0.943,
+      "PR_AUC": 0.974,
+      "Brier": 0.018,
+      "FP_Dec25": 122,
+      "recall_2017-12-22": 0.972,
+      "recall_2017-12-23": 0.969,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "RF original (1000 trees, unpruned)",
+      "recall": 0.952,
+      "precision": 0.935,
+      "FP": 126,
+      "FP_rate": 0.015,
+      "F1": 0.943,
+      "PR_AUC": 0.971,
+      "Brier": 0.019,
+      "FP_Dec25": 52,
+      "recall_2017-12-22": 0.935,
+      "recall_2017-12-23": 0.951,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "RF original + light",
+      "recall": 0.898,
+      "precision": 0.967,
+      "FP": 59,
+      "FP_rate": 0.007,
+      "F1": 0.931,
+      "PR_AUC": 0.979,
+      "Brier": 0.023,
+      "FP_Dec25": 22,
+      "recall_2017-12-22": 0.99,
+      "recall_2017-12-23": 0.999,
+      "recall_2018-01-10": 0.374
+    },
+    {
+      "model": "RF regularised (min leaf 20)",
+      "recall": 0.992,
+      "precision": 0.921,
+      "FP": 161,
+      "FP_rate": 0.02,
+      "F1": 0.955,
+      "PR_AUC": 0.984,
+      "Brier": 0.016,
+      "FP_Dec25": 52,
+      "recall_2017-12-22": 0.993,
+      "recall_2017-12-23": 0.988,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "RF regularised, extended features",
+      "recall": 0.992,
+      "precision": 0.939,
+      "FP": 122,
+      "FP_rate": 0.015,
+      "F1": 0.965,
+      "PR_AUC": 0.991,
+      "Brier": 0.011,
+      "FP_Dec25": 21,
+      "recall_2017-12-22": 0.981,
+      "recall_2017-12-23": 1.0,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "LightGBM",
+      "recall": 0.892,
+      "precision": 0.921,
+      "FP": 146,
+      "FP_rate": 0.018,
+      "F1": 0.906,
+      "PR_AUC": 0.963,
+      "Brier": 0.032,
+      "FP_Dec25": 62,
+      "recall_2017-12-22": 0.863,
+      "recall_2017-12-23": 0.882,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "LightGBM, extended features",
+      "recall": 0.985,
+      "precision": 0.963,
+      "FP": 71,
+      "FP_rate": 0.009,
+      "F1": 0.974,
+      "PR_AUC": 0.991,
+      "Brier": 0.009,
+      "FP_Dec25": 6,
+      "recall_2017-12-22": 0.973,
+      "recall_2017-12-23": 0.992,
+      "recall_2018-01-10": 0.997
+    },
+    {
+      "model": "SVM (RBF, scaled)",
+      "recall": 0.917,
+      "precision": 0.922,
+      "FP": 147,
+      "FP_rate": 0.018,
+      "F1": 0.92,
+      "PR_AUC": 0.936,
+      "Brier": 0.026,
+      "FP_Dec25": 65,
+      "recall_2017-12-22": 0.927,
+      "recall_2017-12-23": 0.876,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "kNN (k=15, scaled)",
+      "recall": 0.912,
+      "precision": 0.929,
+      "FP": 132,
+      "FP_rate": 0.016,
+      "F1": 0.92,
+      "PR_AUC": 0.921,
+      "Brier": 0.026,
+      "FP_Dec25": 52,
+      "recall_2017-12-22": 0.908,
+      "recall_2017-12-23": 0.882,
+      "recall_2018-01-10": 1.0
+    },
+    {
+      "model": "LDA",
+      "recall": 0.958,
+      "precision": 0.93,
+      "FP": 137,
+      "FP_rate": 0.017,
+      "F1": 0.944,
+      "PR_AUC": 0.959,
+      "Brier": 0.021,
+      "FP_Dec25": 52,
+      "recall_2017-12-22": 0.982,
+      "recall_2017-12-23": 0.926,
+      "recall_2018-01-10": 0.98
+    },
+    {
+      "model": "Decision tree (depth 3)",
+      "recall": 0.975,
+      "precision": 0.911,
+      "FP": 182,
+      "FP_rate": 0.022,
+      "F1": 0.942,
+      "PR_AUC": 0.901,
+      "Brier": 0.022,
+      "FP_Dec25": 67,
+      "recall_2017-12-22": 0.987,
+      "recall_2017-12-23": 0.953,
+      "recall_2018-01-10": 1.0
+    }
+  ],
+  "policy": [
+    {
+      "model": "LR original (unscaled)",
+      "N": 10,
+      "minutes": 5.0,
+      "false_release_snapshots": 0,
+      "median_release_after_departure_min": 11.2,
+      "max_release_after_departure_min": 12.8,
+      "departures": 5
+    },
+    {
+      "model": "LR original (unscaled)",
+      "N": 20,
+      "minutes": 10.0,
+      "false_release_snapshots": 0,
+      "median_release_after_departure_min": 17.9,
+      "max_release_after_departure_min": 26.0,
+      "departures": 5
+    },
+    {
+      "model": "LR original (unscaled)",
+      "N": 30,
+      "minutes": 15.0,
+      "false_release_snapshots": 0,
+      "median_release_after_departure_min": 23.0,
+      "max_release_after_departure_min": 31.1,
+      "departures": 5
+    },
+    {
+      "model": "Rule: motion + (CO2 or sound)",
+      "N": 10,
+      "minutes": 5.0,
+      "false_release_snapshots": 0,
+      "median_release_after_departure_min": 10.7,
+      "max_release_after_departure_min": 12.2,
+      "departures": 5
+    },
+    {
+      "model": "Rule: motion + (CO2 or sound)",
+      "N": 20,
+      "minutes": 10.0,
+      "false_release_snapshots": 0,
+      "median_release_after_departure_min": 15.8,
+      "max_release_after_departure_min": 28.1,
+      "departures": 5
+    },
+    {
+      "model": "Rule: motion + (CO2 or sound)",
+      "N": 30,
+      "minutes": 15.0,
+      "false_release_snapshots": 0,
+      "median_release_after_departure_min": 20.9,
+      "max_release_after_departure_min": 33.2,
+      "departures": 5
+    },
+    {
+      "model": "LightGBM, extended features",
+      "N": 10,
+      "minutes": 5.0,
+      "false_release_snapshots": 3,
+      "median_release_after_departure_min": 10.7,
+      "max_release_after_departure_min": 12.2,
+      "departures": 5
+    },
+    {
+      "model": "LightGBM, extended features",
+      "N": 20,
+      "minutes": 10.0,
+      "false_release_snapshots": 3,
+      "median_release_after_departure_min": 16.3,
+      "max_release_after_departure_min": 17.4,
+      "departures": 5
+    },
+    {
+      "model": "LightGBM, extended features",
+      "N": 30,
+      "minutes": 15.0,
+      "false_release_snapshots": 3,
+      "median_release_after_departure_min": 21.4,
+      "max_release_after_departure_min": 22.5,
+      "departures": 5
+    }
+  ],
+  "stillness": [
+    {
+      "silence_min": 0,
+      "model": "LR original (unscaled)",
+      "recall": 0.991,
+      "false_release_snapshots_N20": 0
+    },
+    {
+      "silence_min": 0,
+      "model": "Rule: motion + (CO2 or sound)",
+      "recall": 0.985,
+      "false_release_snapshots_N20": 0
+    },
+    {
+      "silence_min": 0,
+      "model": "LightGBM, extended features",
+      "recall": 0.985,
+      "false_release_snapshots_N20": 3
+    },
+    {
+      "silence_min": 10,
+      "model": "LR original (unscaled)",
+      "recall": 0.988,
+      "false_release_snapshots_N20": 0
+    },
+    {
+      "silence_min": 10,
+      "model": "Rule: motion + (CO2 or sound)",
+      "recall": 0.948,
+      "false_release_snapshots_N20": 5
+    },
+    {
+      "silence_min": 10,
+      "model": "LightGBM, extended features",
+      "recall": 0.968,
+      "false_release_snapshots_N20": 1
+    },
+    {
+      "silence_min": 20,
+      "model": "LR original (unscaled)",
+      "recall": 0.988,
+      "false_release_snapshots_N20": 0
+    },
+    {
+      "silence_min": 20,
+      "model": "Rule: motion + (CO2 or sound)",
+      "recall": 0.904,
+      "false_release_snapshots_N20": 68
+    },
+    {
+      "silence_min": 20,
+      "model": "LightGBM, extended features",
+      "recall": 0.983,
+      "false_release_snapshots_N20": 2
+    },
+    {
+      "silence_min": 30,
+      "model": "LR original (unscaled)",
+      "recall": 0.988,
+      "false_release_snapshots_N20": 0
+    },
+    {
+      "silence_min": 30,
+      "model": "Rule: motion + (CO2 or sound)",
+      "recall": 0.851,
+      "false_release_snapshots_N20": 169
+    },
+    {
+      "silence_min": 30,
+      "model": "LightGBM, extended features",
+      "recall": 0.98,
+      "false_release_snapshots_N20": 2
+    },
+    {
+      "silence_min": 40,
+      "model": "LR original (unscaled)",
+      "recall": 0.985,
+      "false_release_snapshots_N20": 0
+    },
+    {
+      "silence_min": 40,
+      "model": "Rule: motion + (CO2 or sound)",
+      "recall": 0.801,
+      "false_release_snapshots_N20": 265
+    },
+    {
+      "silence_min": 40,
+      "model": "LightGBM, extended features",
+      "recall": 0.977,
+      "false_release_snapshots_N20": 3
+    }
+  ],
+  "ablation": [
+    {
+      "removed": "none",
+      "recall": 0.985,
+      "F1": 0.974,
+      "FP": 71,
+      "FP_Dec25": 6
+    },
+    {
+      "removed": "sound",
+      "recall": 0.974,
+      "F1": 0.951,
+      "FP": 142,
+      "FP_Dec25": 83
+    },
+    {
+      "removed": "motion (PIR)",
+      "recall": 0.982,
+      "F1": 0.972,
+      "FP": 73,
+      "FP_Dec25": 5
+    },
+    {
+      "removed": "CO2",
+      "recall": 0.988,
+      "F1": 0.976,
+      "FP": 69,
+      "FP_Dec25": 9
+    },
+    {
+      "removed": "temperature",
+      "recall": 0.978,
+      "F1": 0.971,
+      "FP": 71,
+      "FP_Dec25": 10
+    }
+  ],
+  "perm_importance": {
+    "RF original": {
+      "S5_CO2": 0.315,
+      "time_since_motion": 0.049,
+      "S2_Temp": 0.001,
+      "S6_PIR_5min": 0.001,
+      "S5_CO2_Slope": 0.0,
+      "S2_Sound": 0.0
+    },
+    "LightGBM extended": {
+      "Sound_max_5min": 0.625,
+      "Sound_mean_5min": 0.021,
+      "PIR_cnt_10min": 0.016,
+      "log_tsm": 0.013,
+      "S1_Sound": 0.003,
+      "Temp_d10": 0.001
+    }
+  },
+  "headcount": [
+    {
+      "features": "without light",
+      "model": "LightGBM",
+      "evaluation": "leave-one-day-out",
+      "accuracy": 0.771,
+      "macro_F1": 0.554
+    },
+    {
+      "features": "without light",
+      "model": "Random forest",
+      "evaluation": "leave-one-day-out",
+      "accuracy": 0.773,
+      "macro_F1": 0.561
+    },
+    {
+      "features": "with light",
+      "model": "LightGBM",
+      "evaluation": "leave-one-day-out",
+      "accuracy": 0.82,
+      "macro_F1": 0.673
+    },
+    {
+      "features": "with light",
+      "model": "Random forest",
+      "evaluation": "leave-one-day-out",
+      "accuracy": 0.864,
+      "macro_F1": 0.771
+    },
+    {
+      "features": "with light",
+      "model": "Random forest",
+      "evaluation": "random 75/25 split",
+      "accuracy": 0.998,
+      "macro_F1": 0.993
+    }
+  ]
+}
