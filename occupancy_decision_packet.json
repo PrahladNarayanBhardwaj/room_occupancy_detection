@@ -1,0 +1,42 @@
+{
+  "project": "Privacy-preserving room occupancy estimation",
+  "data": {
+    "train_days": "2017-12-22 to 2017-12-26",
+    "test_days": "2018-01-10 to 2018-01-11",
+    "test_snapshots": 2045,
+    "test_occupied_share": 0.144
+  },
+  "model": {
+    "type": "LogisticRegression",
+    "class_weight": "balanced",
+    "features_excluded": [
+      "S1_Light",
+      "S2_Light",
+      "S3_Light",
+      "S4_Light"
+    ],
+    "reason_excluded": "light dependence caused 184 misses when occupants worked with lights off"
+  },
+  "test_performance": {
+    "recall_occupied": 1.0,
+    "precision_occupied": 0.96,
+    "f1_occupied": 0.98,
+    "false_negatives": 0,
+    "false_positives": 13,
+    "false_positive_cause": "CO2 lag ~7 min after departure"
+  },
+  "policy": {
+    "rule": "release room after N consecutive predicted-empty snapshots",
+    "recommended_N": 20,
+    "recommended_minutes": 10,
+    "false_releases_on_test": 0,
+    "correct_release_snapshots": 1719
+  },
+  "limitations": [
+    "single occupied test day",
+    "backtest not live experiment",
+    "long-still-occupant case untested",
+    "no HVAC during data collection"
+  ],
+  "recommendation": "PILOT with human review; do not auto-release without confirmation"
+}
